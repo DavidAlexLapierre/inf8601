@@ -64,12 +64,10 @@ void save_image(image_dir_t* image_dir) {
         printf(".");
         fflush(stdout);
         --mod_img;
-    } 
+    }
 }
 
 int pipeline_pthread(image_dir_t* image_dir) {
-    int TOTAL_IMG = 401;
-    bool should_run = true;
     q_double = queue_create(10);
     q_desat = queue_create(10);
     q_flip = queue_create(10);
@@ -83,7 +81,9 @@ int pipeline_pthread(image_dir_t* image_dir) {
     pthread_t sobel_id;
     pthread_t save_id;
 
-    while (should_run) {
+    load_image(image_dir);
+
+    while (mod_img > 0) {
         // Load
         pthread_create(&load_id, NULL, (void*) &load_image, image_dir);
         pthread_create(&double_id, NULL, (void*) &double_image, NULL);
@@ -91,17 +91,7 @@ int pipeline_pthread(image_dir_t* image_dir) {
         pthread_create(&flip_id, NULL, (void*) &flip_image, NULL);
         pthread_create(&sobel_id, NULL, (void*) &sobel_filter, NULL);
         pthread_create(&save_id, NULL, (void*) &save_image, image_dir);
-
-        if (nb_img == TOTAL_IMG && mod_img == 0) {
-            printf("-ENDING-"); 
-            fflush(stdout);
-            should_run = false;
-        }
-
     }
-
-    printf("-ENDED-"); 
-    fflush(stdout);
 
     return 0;
 }   
