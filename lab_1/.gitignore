@@ -1,4 +1,2 @@
-README.pdf
 build/
-source/pipeline-*
-./data/*.png
+data/*.png
