@@ -5,6 +5,10 @@
 
 #include "image.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif /* __cplusplus */
+
 /* all filter return a newly allocated image, input image is not freed  */
 
 image_t* filter_scale_up(image_t* image, size_t factor);
@@ -21,5 +25,9 @@ image_t* filter_box_blur(image_t* image);
 image_t* filter_gaussian_blur(image_t* image);
 image_t* filter_horizontal_flip(image_t* image);
 image_t* filter_vertical_flip(image_t* image);
+
+#ifdef __cplusplus
+} /* extern "C" */
+#endif /* __cplusplus */
 
 #endif /* INCLUDE_FILTER_H_ */

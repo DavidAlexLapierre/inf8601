@@ -6,6 +6,10 @@
 #include <stdbool.h>
 #include <stddef.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif /* __cplusplus */
+
 typedef struct pixel {
     unsigned char bytes[4];
 } pixel_t;
@@ -40,5 +44,9 @@ typedef struct image_dir {
 
 image_t* image_dir_load_next(image_dir_t* image_dir);
 int image_dir_save(image_dir_t* image_dir, image_t* image);
+
+#ifdef __cplusplus
+} /* extern "C" */
+#endif /* __cplusplus */
 
 #endif /* INCLUDE_IMAGE_H_ */
