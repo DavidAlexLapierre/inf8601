@@ -6,6 +6,7 @@
 
 extern "C" {
     image_dir_t* directory;
+    const int NB_OF_FILTERS = 6;
 
     class Load {
         public:
@@ -63,23 +64,23 @@ extern "C" {
             }
         };
 
-    void RunPipeline(int ntoken) {
+    void execute_tbb_pipeline(int ntoken) {
         tbb::parallel_pipeline(
             ntoken,
             tbb::make_filter<void,image_t*>(
                 tbb::filter::serial_in_order, Load())
         &
             tbb::make_filter<image_t*,image_t*>(
-                tbb::filter::serial_out_of_order, Scale() )
+                tbb::filter::parallel, Scale() )
         &
             tbb::make_filter<image_t*,image_t*>(
-                tbb::filter::serial_out_of_order, Desaturate() )
+                tbb::filter::parallel, Desaturate() )
         &
             tbb::make_filter<image_t*,image_t*>(
-                tbb::filter::serial_out_of_order, Flip() )
+                tbb::filter::parallel, Flip() )
         &
             tbb::make_filter<image_t*,image_t*>(
-                tbb::filter::serial_out_of_order, Sobel() )
+                tbb::filter::parallel, Sobel() )
         &
             tbb::make_filter<image_t*,void>(
                 tbb::filter::serial_in_order, Save()));
@@ -88,8 +89,8 @@ extern "C" {
     int pipeline_tbb(image_dir_t* image_dir) {
         directory = image_dir;
 
-        RunPipeline(6);
+        execute_tbb_pipeline(NB_OF_FILTERS);
         
-        return -1;
+        return 0;
     }
 } /* extern "C" */
