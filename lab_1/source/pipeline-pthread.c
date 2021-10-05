@@ -86,11 +86,11 @@ int pipeline_pthread(image_dir_t* image_dir) {
     while (mod_img > 0) {
         // Load
         pthread_create(&load_id, NULL, (void*) &load_image, image_dir);
-        pthread_create(&double_id, NULL, (void*) &double_image, NULL);
-        pthread_create(&desat_id, NULL, (void*) &desaturate_image, NULL);
-        pthread_create(&flip_id, NULL, (void*) &flip_image, NULL);
-        pthread_create(&sobel_id, NULL, (void*) &sobel_filter, NULL);
-        pthread_create(&save_id, NULL, (void*) &save_image, image_dir);
+        if (q_double->used > 0) pthread_create(&double_id, NULL, (void*) &double_image, NULL);
+        if (q_desat->used > 0) pthread_create(&desat_id, NULL, (void*) &desaturate_image, NULL);
+        if (q_flip->used > 0) pthread_create(&flip_id, NULL, (void*) &flip_image, NULL);
+        if (q_sob->used > 0) pthread_create(&sobel_id, NULL, (void*) &sobel_filter, NULL);
+        if (q_save->used > 0) pthread_create(&save_id, NULL, (void*) &save_image, image_dir);
     }
 
     return 0;
