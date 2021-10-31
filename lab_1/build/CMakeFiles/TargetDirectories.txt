@@ -1,0 +1,11 @@
+/home/jonathan/Desktop/inf8601/lab_1/build/CMakeFiles/edit_cache.dir
+/home/jonathan/Desktop/inf8601/lab_1/build/CMakeFiles/check.dir
+/home/jonathan/Desktop/inf8601/lab_1/build/CMakeFiles/run-pthread.dir
+/home/jonathan/Desktop/inf8601/lab_1/build/CMakeFiles/run-serial.dir
+/home/jonathan/Desktop/inf8601/lab_1/build/CMakeFiles/handout.dir
+/home/jonathan/Desktop/inf8601/lab_1/build/CMakeFiles/rebuild_cache.dir
+/home/jonathan/Desktop/inf8601/lab_1/build/CMakeFiles/run-all.dir
+/home/jonathan/Desktop/inf8601/lab_1/build/CMakeFiles/run-tbb.dir
+/home/jonathan/Desktop/inf8601/lab_1/build/CMakeFiles/remise.dir
+/home/jonathan/Desktop/inf8601/lab_1/build/CMakeFiles/format.dir
+/home/jonathan/Desktop/inf8601/lab_1/build/CMakeFiles/pipeline.dir
