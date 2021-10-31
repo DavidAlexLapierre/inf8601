@@ -28,7 +28,7 @@ CL/cl.h
 opencl.h
 ../include/opencl.h
 
-/home/jonathan/Desktop/inf8601/lab_2/handout/source/sinoscope-opencl.c
+/home/jonathan/Desktop/inf8601/lab_2/handout/source/sinoscope-openmp.c
 math.h
 -
 stdio.h
