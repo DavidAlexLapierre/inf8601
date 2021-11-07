@@ -1,7 +1,0 @@
-/home/jonathan/Desktop/inf8601/lab_2/handout/build/CMakeFiles/edit_cache.dir
-/home/jonathan/Desktop/inf8601/lab_2/handout/build/CMakeFiles/check.dir
-/home/jonathan/Desktop/inf8601/lab_2/handout/build/CMakeFiles/handout.dir
-/home/jonathan/Desktop/inf8601/lab_2/handout/build/CMakeFiles/rebuild_cache.dir
-/home/jonathan/Desktop/inf8601/lab_2/handout/build/CMakeFiles/remise.dir
-/home/jonathan/Desktop/inf8601/lab_2/handout/build/CMakeFiles/format.dir
-/home/jonathan/Desktop/inf8601/lab_2/handout/build/CMakeFiles/sinoscope.dir
